@@ -56,7 +56,7 @@ app.get('/tasks', tasks.tasks);
 app.get('/tasks/new', tasks.new);
 app.get('/tasks/:id', tasks.task);
 app.get('/tasks/:id/edit', tasks.edit);
-app.get('/tasks/:id/delete', tasks['delete']);
+app.get('/tasks/:id/delete', tasks['delete']);  ///////
 
 /**
  * Tasks App POST Routes
