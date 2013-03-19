@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  h1= title
+  p Make Changes to #{doc.task}:
+  small #{doc.id}
+  br
+  // method="post", action="#/tasks/#{doc.id}/edit"
+  div(ng-controller="EditTaskCtrl")
+    input(type="hidden", name="_method", value="put")
+    input(type="text", name="task[task]", value="#{doc.task}")
+    input(type="submit", value="update", ng-click="submitEdit()")
+  
+  div
+    b
+      mark TTTTThis data-binding DOESN'T work cuz its NOT getting the view and IS using $('ng-view').html(data);
+    br
+    input(ng-model="myMod")

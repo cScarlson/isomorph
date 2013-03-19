@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  link(href="stylesheets/main.css", rel="stylesheet")
+  h1= title
+  h4 Welcome to #{title}
+  div#appWrapr(ng-app="myModule", ng-controller="ApplicationCtrl")
+    a(href="#/") home | 
+    a(href="#/map") map | 
+    a(href="#/chat") chat | 
+    a(href="#/blog") blog | 
+    a(href="#/tasks") tasks | 
+    a(href="#/files") files
+    br
+    br
+    ng-view
+    //mydir(exp="1")
+    //ng-partialStore(exp="1")
+  script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
+  script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-resource.min.js")
+  script(src="/javascripts/angular/app.js")
+  script(src="/javascripts/angular/ctrls.js")
+  script(src="/javascripts/angular/directives.js")
+  script(src="/javascripts/main.js")
+  script(src="/js/test.js")

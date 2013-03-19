@@ -1,0 +1,3 @@
+script(src="javascripts/leaflet.js")
+link(href="stylesheets/leaflet.css", rel="stylesheet")
+div#map loading leaflet...

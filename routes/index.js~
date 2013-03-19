@@ -1,0 +1,36 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+	res.render('index', { title: 'NeighborNet' });
+};
+
+exports.SAMPLE = function(req, res){
+	res.render('SAMPLE', { title: 'SAMPLE' });
+};
+
+exports.map = function(req, res){
+	res.render('map', { title: 'Map' });
+};
+
+exports.chat = function(req, res){
+	res.render('chat', { title: 'Chat' });
+};
+
+exports.blog = function(req, res){
+	res.render('blog', { title: 'Blog' });
+};
+
+exports.files = function(req, res){
+	res.render('files', { title: 'Files' });
+};
+
+
+
+
+
+
+
+

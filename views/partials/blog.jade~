@@ -1,0 +1,2 @@
+script(src="javascripts/blog.js")
+link(href="stylesheets/blog.css", rel="stylesheet")

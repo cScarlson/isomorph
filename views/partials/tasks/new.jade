@@ -1,0 +1,9 @@
+extends ../../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method="post", action="/tasks")
+    fieldset
+      input(type="text", name="task[task]", placeholder="task name", autofocus)
+      input(type="submit")

@@ -1,0 +1,49 @@
+extends ../../layout
+
+
+block content
+  -if(typeof flash != 'undefined')
+    p Wha...?
+    -if(flash.info)
+    p= flash.info
+  h1= title
+  p Welcome to #{title}
+  a(href="#/tasks/new") New Task
+  br
+  br
+  -if(docs.length)
+    b Tasks
+    table
+      each doc in docs
+        tr
+          td #{doc.task} 
+          td
+            a(href="#/tasks/#{doc.id}") View
+          td
+            a(href="#/tasks/#{doc.id}/edit") Edit
+          td
+            a(href="#/tasks/#{doc.id}/delete") DELETE
+  -else
+    b #{doc.task}
+      table
+        tr
+          td #{doc.task} 
+          td
+            a(href="#/tasks") Back
+          td
+            a(href="#/tasks/#{doc.id}/edit") Edit
+          td
+            a(href="#/tasks/#{doc.id}/delete") DELETE
+  br
+  br
+  a(href="#/tasks/new") New Task
+  br
+  b
+    mark This data-binding works cuz its ACTUALLY getting the view and NOT using $('ng-view').html(data);
+  br
+  input(ng-model="myMod")
+  b(ng-controller="AppCtrl") output is: {{obj.key}}
+  
+  
+  
+  
