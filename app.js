@@ -56,7 +56,7 @@ app.get('/tasks', tasks.tasks);
 app.get('/tasks/new', tasks.new);
 app.get('/tasks/:id', tasks.task);
 app.get('/tasks/:id/edit', tasks.edit);
-app.get('/tasks/:id/delete', tasks['delete']);  ///////
+app.get('/tasks/:id/delete', tasks['delete']);
 
 /**
  * Tasks App POST Routes
@@ -124,24 +124,25 @@ Task = new Schema({
 /**
  * MySQL
  */
-/*
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'cody',
-  password : '334583oh!4',
+  host     : 'localhost', // 14559 60591 15165 3306 3000 ???
+  user     : 'root',
+  password : '334583oh!4'
 });
 
 connection.connect();
 
+/*
 connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
   if (err) throw err;
 
   console.log('The solution is: ', rows[0].solution);
 });
+*/
 
 connection.end();
-*/
+
 
 cmdr
   .version('0.0.1')

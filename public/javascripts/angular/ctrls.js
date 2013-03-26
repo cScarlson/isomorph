@@ -41,29 +41,33 @@ app.controller('NewTaskCtrl', function($scope, $routeParams, $location, $http){
 
 
 app.controller('ViewTaskCtrl', function($scope, $routeParams, $location, $http){
-	
 	var idParam = $routeParams.id;
 	routeProvider.when('/tasks/:id/', {templateUrl: '/tasks/' + idParam});
 	$location.path('/tasks/' + idParam + '/');
-	
 });
 
 
 app.controller('EditTaskCtrl', function($scope, $routeParams, $location, $http){
-	
 	var idParam = $routeParams.id;
+	
+	$scope.formVals = {
+		method: $('#method').val(),
+		task: $('#task').val()
+	};
+	
+	$scope.submitEdit = function(){
+		console.log('yay!... you submitted...:', $scope.formVals.task);
+	};
+	
 	routeProvider.when('/tasks/:id/edit/', {templateUrl: '/tasks/' + idParam + '/edit'});
 	$location.path('/tasks/' + idParam + '/edit/');
-	
 });
 
 
 app.controller('DeleteTaskCtrl', function($scope, $routeParams, $location, $http){
-	
 	var idParam = $routeParams.id;
 	routeProvider.when('/tasks/:id/delete/', {templateUrl: '/tasks/' + idParam + '/delete'});
 	$location.path('/tasks/' + idParam + '/delete/');
-	
 });
 
 

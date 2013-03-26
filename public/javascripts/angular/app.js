@@ -1,5 +1,5 @@
 var routeProvider
-	, app = angular.module('myModule', ['ngResource']).config(function($routeProvider){
+	, app = angular.module('Isomorph', ['ngResource']).config(function($routeProvider){
 	
 	routeProvider = $routeProvider;
 	$routeProvider
@@ -17,30 +17,8 @@ var routeProvider
 		.when('/tasks/:id/edit', {templateUrl: '/tasks', controller: 'EditTaskCtrl'})
 		.when('/tasks/:id/delete', {templateUrl: '/tasks', controller: 'DeleteTaskCtrl'})
 		.otherwise({redirectTo: '/login'});
-		//console.log('$routeProvider', $routeProvider);
 		
-})
-
-/*.controller('ViewTaskCtrl', function($scope, $routeParams, $location, $http){
-
-	console.log('this is master', $routeParams.id, routeProvider);
-	var idParam = $routeParams.id;
-	routeProvider
-		.when(
-			'/tasks/:id',
-			{templateUrl: '/tasks/' + idParam + '/view', controller: 'ViewTaskCtrl'}
-		);
-	$location.path('/tasks/' + idParam + '');
-	
-})*/
-
-;
-
-/*
-app.controller('Ctrl', function($scope, $routeParams, $location, $http){
-	alert('u reached the Ctrl thang');
-})
-*/
+});
 
 /**
  * RESOURCES

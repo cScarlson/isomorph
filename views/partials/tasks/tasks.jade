@@ -23,7 +23,7 @@ block content
             a(href="#/tasks/#{doc.id}/edit") Edit
           td
             a(href="#/tasks/#{doc.id}/delete") DELETE
-  -else
+  -else if(doc)
     b #{doc.task}
       table
         tr
@@ -34,15 +34,11 @@ block content
             a(href="#/tasks/#{doc.id}/edit") Edit
           td
             a(href="#/tasks/#{doc.id}/delete") DELETE
+  -else
+    mark There was an unexpected error.
   br
   br
   a(href="#/tasks/new") New Task
-  br
-  b
-    mark This data-binding works cuz its ACTUALLY getting the view and NOT using $('ng-view').html(data);
-  br
-  input(ng-model="myMod")
-  b(ng-controller="AppCtrl") AppCtrl: {{obj.key}} output is: {{myMod}}
   
   
   

@@ -6,7 +6,7 @@ block content
 	br
 	b #{doc.id}
 	br
-	form(method="post", action="#/tasks/#{doc.id}")
+	form(method="post", action="/tasks/#{doc.id}")
 		input(type="hidden", name="_method", value="delete")
 		input(type="hidden", name="task[task]", value="#{doc.id}")
 		input(type="submit", value="YES, DELETE")

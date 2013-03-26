@@ -20,13 +20,12 @@ exports.tasks = function(req, res){
 };
 
 exports.task = function(req, res){
-	console.log('@routeParam:', req.params.id);
 	Task.findById(req.params.id, function(err, doc){
 		if(!err){
 			res.render('partials/tasks/tasks', {
 				title: 'Task: ' + doc.task, docs: [], doc: doc
 			});
-		}else{console.log('______________' + req.params.id + '__________');
+		}else{
 			res.redirect('partials/tasks/tasks');
 		}
 	});
@@ -56,14 +55,14 @@ exports.put = function(req, res){
 			doc.save(function(err){
 				if(!err){
 					//req.flash('info', 'Updated Task');
-					res.redirect('partials/tasks');
+					res.redirect('/#/tasks');
 				}else{
 					req.flash('error', err);
-					res.redirect('partials/tasks');
+					res.redirect('/#/tasks');
 				}
 			});
 		}else{
-			res.redirect('partials/tasks/' + req.params.id + '/edit');
+			res.redirect('/#/tasks/' + req.params.id + '/edit');
 		}
 	});
 };
@@ -74,7 +73,7 @@ exports.put = function(req, res){
 exports.del = function(req, res){
 	var task = Task.findById(req.body.task.task, function(err, doc){
 		!err && task.remove();
-		res.redirect('partials/tasks');
+		res.redirect('/#/tasks');
 	});
 };
 
@@ -92,7 +91,7 @@ exports.new = function(req, res){
  */
 exports.edit = function(req, res){
 	Task.findById(req.params.id, function(err, doc){
-		if(!err){console.log('@@@@@ HIT EDIT');
+		if(!err){
 			res.render('partials/tasks/edit', {
 				title: 'Edit Task View',
 				doc: doc

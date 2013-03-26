@@ -5,14 +5,10 @@ block content
   p Make Changes to #{doc.task}:
   small #{doc.id}
   br
-  // method="post", action="#/tasks/#{doc.id}/edit"
-  div(ng-controller="EditTaskCtrl")
-    input(type="hidden", name="_method", value="put")
-    input(type="text", name="task[task]", value="#{doc.task}")
-    input(type="submit", value="update", ng-click="submitEdit()")
+  // form(ng-controller="EditTaskCtrl", ng-submit="submitEdit()")
+  form(ng-controller="EditTaskCtrl", method="post", action="/tasks/#{doc.id}")
+    input(id="method", type="hidden", name="_method", value="put")
+    input(id="task", type="text", name="task[task]", value="#{doc.task}", ng-model="formVals.task")
+    input(id="submit", type="submit", value="update")
+    b to "{{formVals.task}}"
   
-  div
-    b
-      mark TTTTThis data-binding DOESN'T work cuz its NOT getting the view and IS using $('ng-view').html(data);
-    br
-    input(ng-model="myMod")
