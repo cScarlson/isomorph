@@ -66,10 +66,7 @@ app.post('/tasks', tasks.post);
 /**
  * Tasks App PUT Routes
  */
-//app.put('/tasks/:id', tasks.put);
-app.put('/tasks/:id', function(req, res){
-	console.log('o..kay....?');
-});
+app.put('/tasks/:id', tasks.put);
 
 /**
  * Tasks App DELETE Routes
@@ -134,7 +131,7 @@ var connection = mysql.createConnection({
   password : '334583oh!4'
 });
 
-connection.connect();
+connection.connect(function(){});
 
 /*
 connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {

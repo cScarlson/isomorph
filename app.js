@@ -131,7 +131,9 @@ var connection = mysql.createConnection({
   password : '334583oh!4'
 });
 
-connection.connect();
+connection.connect(function(){
+	console.log('successfully connected to mysql!');
+});
 
 /*
 connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
